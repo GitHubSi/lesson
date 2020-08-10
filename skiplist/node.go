@@ -2,16 +2,16 @@ package skiplist
 
 // skip list header node
 type HeaderNode struct {
-	Down *HeaderNode
+	Down *DataNode
 	Next *DataNode
 }
 
-func (header *HeaderNode) GetDown() *HeaderNode {
+func (header *HeaderNode) GetDown() *DataNode {
 	return header.Down
 }
 
-func (header *HeaderNode) SetDown(node *HeaderNode) {
-	header.Down = node.Down
+func (header *HeaderNode) SetDown(node *DataNode) {
+	header.Down = node
 }
 
 func (header *HeaderNode) GetNext() *DataNode {
