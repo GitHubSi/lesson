@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
+	"sync"
 )
 
 type Binary uint64
@@ -14,6 +16,14 @@ func (i Binary) Get() uint64 {
 	return uint64(i)
 }
 
-func main() {
+type L struct {
+	m sync.RWMutex
+}
 
+func main() {
+	fmt.Println(1 << 0)
+	l := L{}
+	l.m.Lock()
+	//l.m.Unlock()
+	fmt.Println("thx")
 }
