@@ -55,8 +55,9 @@ func main() {
 	})
 
 	router.POST("/post", func(c *gin.Context) {
-		fmt.Println("post response ")
+		c.JSON(200, gin.H{})
 	})
 
-	GraceStart(":1313", router)
+	// GraceStart(":1313", router)
+	router.Run(":1313")
 }
