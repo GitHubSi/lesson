@@ -2,24 +2,32 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-func main() {
-	var result = make(map[int]int)
-	go func(){
-		defer func(){
-			if err := recover(); err != nil {
-				fmt.Println(err)
-			}
-		}()
+type Value struct {
+	A string
+	B int
+	C time.Time
+	D []byte
+	E float32
+	F *string
+	G People
+}
+type People struct {
+	Sex     int64
+	Age     int64
+	Name    string
+	Icon    string
+	Address string
+	Height  int64
+}
 
-		for{
-			_ = result[1]
-		}
-	}()
+func main() {
+	a := []string{"a"}
+	fmt.Println(a)
 
 	for{
-		result[1]=1
+
 	}
-	fmt.Println("process over")
 }
