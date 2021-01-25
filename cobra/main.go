@@ -9,6 +9,7 @@ import (
 func main() {
 	//cmd.Execute()
 
+
 	type Infos []string
 
 	personA := Infos{"fuhui"}
